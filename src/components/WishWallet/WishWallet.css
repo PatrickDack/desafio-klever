@@ -1,0 +1,12 @@
+.container {
+  align-items: center;
+  color: whitesmoke;
+  display: flex;
+  font-size: 25px;
+  font-weight: 900;
+  justify-content: center;
+}
+
+.container img {
+  width: 45px;
+}

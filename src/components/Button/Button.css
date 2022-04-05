@@ -1,0 +1,10 @@
+.add-token {
+  background-color: #AA33B5;
+  border: none;
+  border-radius: 3px;
+  color: whitesmoke;
+  font-size: 12px;
+  font-weight: 400;
+  height: 25px;
+  width: 80px;
+}
