@@ -6,11 +6,13 @@ import App from './App';
 import AddToken from './pages/AddToken';
 import EditToken from './pages/EditToken';
 import NotFound from './pages/NotFound';
+import Header from './components/Header';
 
 ReactDOM.render(
   <BrowserRouter>
+    <Header />
     <Routes>
-      <Route exact path="/" element={ <App /> }/>
+      <Route path="/" element={ <App /> }/>
       <Route path="/addtoken" element={ <AddToken /> } />
       <Route path="/edittoken" element={ <EditToken /> } />
       <Route path='*' element={ <NotFound /> } />
