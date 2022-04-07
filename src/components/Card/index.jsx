@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 function Card ({ data }) {
@@ -12,7 +13,9 @@ function Card ({ data }) {
           data.map((d, index) =>
             <div key={ index } className='row'>
               <div>
-                <img src="./src/images/edit.png"/>
+                <Link to="/edittoken">
+                  <img src="./src/images/edit.png"/>
+                </Link>
                 <span>{ d.token }</span>
               </div>
               <span>{ d.balance }</span>

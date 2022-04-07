@@ -12,6 +12,8 @@
 .input-container input {
   border: none;
   border-radius: 3px;
+  font-size: 20px;
+  font-weight: 400;
   height: 30px;
   margin: 0;
   margin-bottom: 20px;

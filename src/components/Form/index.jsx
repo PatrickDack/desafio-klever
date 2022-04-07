@@ -2,7 +2,7 @@ import Button from "../Button";
 import Input from "../Input";
 import './Form.css';
 
-function Form () {
+function Form ({ renderRemove }) {
   return (
     <form className="form">
       <Input
@@ -13,11 +13,22 @@ function Form () {
         name="balance"
         label="Balance"
       />
-      <Button
-        type="submit"
-        name="Salvar"
-        className="save"
-      />
+      <div className="button-container">
+        <div className="remove-container">
+          <Button
+            type="submit"
+            name="Remover"
+            className={ renderRemove }
+          />
+        </div>
+        <div className="save-container">
+          <Button
+            type="submit"
+            name="Salvar"
+            className="save"
+          />
+        </div>
+      </div>
     </form>
   )
 

@@ -2,6 +2,7 @@ button {
   border: none;
   border-radius: 3px;
   color: whitesmoke;
+  display: none;
   font-size: 12px;
   font-weight: 400;
   height: 25px;
@@ -10,12 +11,20 @@ button {
 
 .add-token {
   background-color: #AA33B5;
+  display: block;
 }
 
 .save {
   background-color: #AA33B5;
+  display: block;
 }
 
 .back {
   background-color: gray;
+  display: block;
+}
+
+.renderRemove {
+  background-color: red;
+  display: block;
 }
