@@ -1,10 +1,25 @@
+import { useState, useEffect } from 'react/cjs/react.development';
 import { Link } from 'react-router-dom';
 import WishWallet from "../components/WishWallet";
 import Button from '../components/Button';
 import Card from '../components/Card';
 import './Home.css';
 
-function Home ({ data }) {
+// const data = [
+//   {token: 'KLV', balance: '10,250.50'},
+//   {token: 'DVK', balance: '50,250.71'},
+//   {token: 'KFI', balance: '10'},
+// ];
+
+const getTokens = () => JSON.parse(localStorage.getItem('tokens')) || [];
+
+function Home () {
+  const [tokens, setTokens] = useState([]);
+
+  useEffect(() => {
+    setTokens(getTokens());
+  }, []);
+
   return (
     <div className="main">
       <div className='main-content'>
@@ -18,7 +33,7 @@ function Home ({ data }) {
           }
         </Link>
       </div>
-      <Card data={ data } />
+      <Card data={ tokens } />
     </div>
   )
 }
