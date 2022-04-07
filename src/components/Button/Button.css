@@ -1,5 +1,4 @@
-.add-token {
-  background-color: #AA33B5;
+button {
   border: none;
   border-radius: 3px;
   color: whitesmoke;
@@ -7,4 +6,16 @@
   font-weight: 400;
   height: 25px;
   width: 80px;
+}
+
+.add-token {
+  background-color: #AA33B5;
+}
+
+.save {
+  background-color: #AA33B5;
+}
+
+.back {
+  background-color: gray;
 }

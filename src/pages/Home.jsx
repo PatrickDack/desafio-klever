@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import WishWallet from "../components/WishWallet";
 import Button from '../components/Button';
 import Card from '../components/Card';
+import './Home.css';
 
 function Home ({ data }) {
   return (
