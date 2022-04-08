@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react/cjs/react.development';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import WishWallet from "../components/WishWallet";
 import Button from '../components/Button';
 import Form from '../components/Form';
@@ -9,12 +9,34 @@ function EditToken () {
   const [tempToken, setTempToken] = useState('');
   const [tempBalance, setTempBalance] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
   const { token, balance } = location.state;
 
   useEffect(() => {
     setTempToken(token);
     setTempBalance(balance);
   }, []);
+
+  const handleChangeToken = ({ target }) => {
+    setTempToken(target.value.toUpperCase());
+  };
+
+  const handleChangeBalance = ({ target }) => {
+    setTempBalance(target.value);
+  };
+
+  const editToken = () => {
+    const tokens = JSON.parse(localStorage.getItem('tokens')) || [];
+    tokens.forEach((t) => {
+      if(t.token == token) {
+        t.token = tempToken;
+        t.balance = tempBalance;
+      }
+    });
+
+    localStorage.setItem('tokens', JSON.stringify(tokens));
+    navigate('/');
+  }
 
   return (
     <div className="main">
@@ -37,6 +59,7 @@ function EditToken () {
       dataValid={ dataValid(tempToken, tempBalance) }
       token={ tempToken }
       balance={ tempBalance }
+      saveToken={ editToken }
       />
     </div>
   )
