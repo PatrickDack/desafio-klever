@@ -4,6 +4,7 @@ import WishWallet from "../components/WishWallet";
 import Button from '../components/Button';
 import Form from '../components/Form';
 import dataValid from '../services/dataValid';
+import validToken from '../services/validToken';
 
 function EditToken () {
   const [tempToken, setTempToken] = useState('');
@@ -27,15 +28,25 @@ function EditToken () {
 
   const editToken = () => {
     const tokens = JSON.parse(localStorage.getItem('tokens')) || [];
-    tokens.forEach((t) => {
-      if(t.token == token) {
-        t.token = tempToken;
-        t.balance = tempBalance;
-      }
-    });
+    const filteredTokens = tokens.filter((t) => t.token !== token);
+    const newToken = {
+      token: tempToken,
+      balance: tempBalance
+    }
 
-    localStorage.setItem('tokens', JSON.stringify(tokens));
-    navigate('/');
+    if(validToken(filteredTokens, newToken)) {
+      return alert("Token já cadastrado, insira um token válido!");
+    } else {
+      tokens.forEach((t) => {
+        if(t.token == token) {
+          t.token = tempToken;
+          t.balance = tempBalance;
+        }
+      });
+
+      localStorage.setItem('tokens', JSON.stringify(tokens));
+      navigate('/');
+    }
   }
 
   return (
@@ -53,13 +64,13 @@ function EditToken () {
         </Link>
       </div>
       <Form
-      renderRemove="renderRemove"
-      handleChangeBalance={ handleChangeBalance }
-      handleChangeToken={ handleChangeToken }
-      dataValid={ dataValid(tempToken, tempBalance) }
-      token={ tempToken }
-      balance={ tempBalance }
-      saveToken={ editToken }
+        renderRemove="renderRemove"
+        handleChangeBalance={ handleChangeBalance }
+        handleChangeToken={ handleChangeToken }
+        dataValid={ dataValid(tempToken, tempBalance) }
+        token={ tempToken }
+        balance={ tempBalance }
+        saveToken={ editToken }
       />
     </div>
   )

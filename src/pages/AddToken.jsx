@@ -4,6 +4,7 @@ import WishWallet from '../components/WishWallet';
 import Button from '../components/Button';
 import Form from '../components/Form';
 import dataValid from '../services/dataValid';
+import validToken from '../services/validToken';
 import './AddToken.css';
 
 function AddToken () {
@@ -19,8 +20,6 @@ function AddToken () {
   const handleChangeBalance = ({ target }) => {
     setBalance(target.value);
   };
-
-  const validToken = (list, newToken) => list.some(({token}) => token == newToken.token);
 
   const saveToken = (e) => {
     e.preventDefault();
