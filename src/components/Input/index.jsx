@@ -1,6 +1,6 @@
 import './Input.css';
 
-function Input({ type, className, name, label }) {
+function Input({ type, className, name, label, onChange, value }) {
   return (
     <div className="input-container">
       <h4>{ label }</h4>
@@ -8,6 +8,10 @@ function Input({ type, className, name, label }) {
         className={className}
         name={name}
         type={type}
+        onChange={ onChange }
+        value={ value }
+        required
+        autoComplete='off'
       />
     </div>
   )

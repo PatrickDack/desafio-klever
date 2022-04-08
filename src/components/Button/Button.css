@@ -2,6 +2,7 @@ button {
   border: none;
   border-radius: 3px;
   color: whitesmoke;
+  cursor: pointer;
   display: none;
   font-size: 12px;
   font-weight: 400;
@@ -27,4 +28,8 @@ button {
 .renderRemove {
   background-color: #920000;
   display: block;
+}
+
+.disabled {
+  opacity: 50%;
 }
