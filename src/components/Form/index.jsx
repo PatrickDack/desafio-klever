@@ -7,6 +7,7 @@ function Form ({
   handleChangeBalance,
   handleChangeToken,
   saveToken,
+  deleteToken,
   token,
   balance,
   dataValid
@@ -28,9 +29,10 @@ function Form ({
       <div className="button-container">
         <div className="remove-container">
           <Button
-            type="submit"
+            type="button"
             name="Remover"
             className={ renderRemove }
+            fn={ deleteToken }
           />
         </div>
         <div className={ dataValid ? "save-container disabled" : "save-container"}>

@@ -49,6 +49,15 @@ function EditToken () {
     }
   }
 
+  const deleteToken = (e) => {
+    e.preventDefault();
+    const tokens = JSON.parse(localStorage.getItem('tokens')) || [];
+    const filteredTokens = tokens.filter((t) => t.token !== token);
+
+    localStorage.setItem('tokens', JSON.stringify(filteredTokens));
+    navigate('/');
+  }
+
   return (
     <div className="main">
       <WishWallet />
@@ -71,6 +80,7 @@ function EditToken () {
         token={ tempToken }
         balance={ tempBalance }
         saveToken={ editToken }
+        deleteToken={ deleteToken }
       />
     </div>
   )

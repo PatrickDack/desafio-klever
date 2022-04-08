@@ -21,8 +21,7 @@ function AddToken () {
     setBalance(target.value);
   };
 
-  const saveToken = (e) => {
-    e.preventDefault();
+  const saveToken = () => {
     let tokens = JSON.parse(localStorage.getItem('tokens')) || [];
     const newToken = { token, balance };
 
