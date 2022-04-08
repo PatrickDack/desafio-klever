@@ -19,18 +19,25 @@ function AddToken () {
     setBalance(target.value);
   };
 
+  const validToken = (list, newToken) => list.some(({token}) => token == newToken.token);
+
   const saveToken = (e) => {
     e.preventDefault();
     let tokens = JSON.parse(localStorage.getItem('tokens')) || [];
     const newToken = { token, balance };
 
-    tokens = [...tokens, newToken];
+    if (validToken(tokens, newToken)) {
+      return alert("Token já cadastrado, insira um token válido!");
+    } else {
 
-    localStorage.setItem('tokens', JSON.stringify(tokens));
-    setToken('');
-    setBalance('');
+      tokens = [...tokens, newToken];
 
-    navigate("/")
+      localStorage.setItem('tokens', JSON.stringify(tokens));
+      setToken('');
+      setBalance('');
+
+      navigate("/")
+    }
   };
 
   return (

@@ -13,8 +13,8 @@ function Card ({ data }) {
           data.map((d, index) =>
             <div key={ index } className='row'>
               <div>
-                <Link to="/edittoken">
-                  <img src="./src/images/edit.png"/>
+                <Link to="/edittoken" id={ d.token }>
+                  <img src="./src/images/edit.png" />
                 </Link>
                 <span>{ d.token }</span>
               </div>
