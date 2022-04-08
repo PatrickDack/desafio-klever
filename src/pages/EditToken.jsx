@@ -1,9 +1,21 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react/cjs/react.development';
+import { Link, useLocation } from 'react-router-dom';
 import WishWallet from "../components/WishWallet";
 import Button from '../components/Button';
 import Form from '../components/Form';
+import dataValid from '../services/dataValid';
 
 function EditToken () {
+  const [tempToken, setTempToken] = useState('');
+  const [tempBalance, setTempBalance] = useState('');
+  const location = useLocation();
+  const { token, balance } = location.state;
+
+  useEffect(() => {
+    setTempToken(token);
+    setTempBalance(balance);
+  }, []);
+
   return (
     <div className="main">
       <WishWallet />
@@ -18,7 +30,14 @@ function EditToken () {
           }
         </Link>
       </div>
-      <Form renderRemove="renderRemove" />
+      <Form
+      renderRemove="renderRemove"
+      handleChangeBalance={ handleChangeBalance }
+      handleChangeToken={ handleChangeToken }
+      dataValid={ dataValid(tempToken, tempBalance) }
+      token={ tempToken }
+      balance={ tempBalance }
+      />
     </div>
   )
 }

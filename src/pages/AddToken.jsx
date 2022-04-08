@@ -3,16 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import WishWallet from '../components/WishWallet';
 import Button from '../components/Button';
 import Form from '../components/Form';
+import dataValid from '../services/dataValid';
 import './AddToken.css';
 
 function AddToken () {
   const [token, setToken] = useState('');
   const [balance, setBalance] = useState('');
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const handleChangeToken = ({ target }) => {
-    setToken(target.value.toUpperCase())
+    setToken(target.value.toUpperCase());
   };
 
   const handleChangeBalance = ({ target }) => {
@@ -36,7 +37,7 @@ function AddToken () {
       setToken('');
       setBalance('');
 
-      navigate("/")
+      navigate("/");
     }
   };
 
@@ -60,6 +61,7 @@ function AddToken () {
         saveToken={ saveToken }
         token={ token }
         balance={ balance }
+        dataValid={ dataValid(token, balance) }
       />
     </div>
   )

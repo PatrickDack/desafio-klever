@@ -2,15 +2,15 @@ import Button from "../Button";
 import Input from "../Input";
 import './Form.css';
 
-function Form ({ renderRemove, handleChangeBalance, handleChangeToken, saveToken, token, balance }) {
-  const dataValid = () => {
-    if (token.length == 3 && balance.length !== 0) {
-      return false;
-    }
-
-    return true;
-  }
-
+function Form ({
+  renderRemove,
+  handleChangeBalance,
+  handleChangeToken,
+  saveToken,
+  token,
+  balance,
+  dataValid
+}) {
   return (
     <form className="form">
       <Input
@@ -33,13 +33,13 @@ function Form ({ renderRemove, handleChangeBalance, handleChangeToken, saveToken
             className={ renderRemove }
           />
         </div>
-        <div className={ dataValid() ? "save-container disabled" : "save-container"}>
+        <div className={ dataValid ? "save-container disabled" : "save-container"}>
           <Button
             type="button"
             name="Salvar"
             className="save"
             fn={ saveToken }
-            disabled={ dataValid() }
+            disabled={ dataValid }
           />
         </div>
       </div>
