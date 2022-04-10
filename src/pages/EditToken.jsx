@@ -49,13 +49,16 @@ function EditToken () {
     }
   }
 
-  const deleteToken = (e) => {
-    e.preventDefault();
-    const tokens = JSON.parse(localStorage.getItem('tokens')) || [];
-    const filteredTokens = tokens.filter((t) => t.token !== token);
+  const deleteToken = () => {
+    const response = confirm(`Tem certeza que deseja excluir o token ${tempToken}?`);
 
-    localStorage.setItem('tokens', JSON.stringify(filteredTokens));
-    navigate('/');
+    if(response) {
+      const tokens = JSON.parse(localStorage.getItem('tokens')) || [];
+      const filteredTokens = tokens.filter((t) => t.token !== token);
+
+      localStorage.setItem('tokens', JSON.stringify(filteredTokens));
+      navigate('/');
+    }
   }
 
   return (
