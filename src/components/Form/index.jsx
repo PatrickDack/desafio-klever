@@ -37,7 +37,7 @@ function Form ({
         </div>
         <div className={ dataValid ? "save-container disabled" : "save-container"}>
           <Button
-            type="button"
+            type="submit"
             name="Salvar"
             className="save"
             fn={ saveToken }
