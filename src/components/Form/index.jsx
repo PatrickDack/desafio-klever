@@ -6,6 +6,7 @@ function Form ({
   renderRemove,
   handleChangeBalance,
   handleChangeToken,
+  handleSubmit,
   saveToken,
   deleteToken,
   token,
@@ -13,7 +14,7 @@ function Form ({
   dataValid
 }) {
   return (
-    <form className="form">
+    <form className="form" onSubmit={ handleSubmit }>
       <Input
         name="token"
         label="Token"
