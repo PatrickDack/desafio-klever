@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import dataValid from '../services/dataValid';
 import validToken from '../services/validToken';
+import handleSubmit from '../services/handleSubmit';
 import './AddToken.css';
 
 function AddToken () {
@@ -56,6 +57,7 @@ function AddToken () {
       <Form
         handleChangeBalance={ handleChangeBalance }
         handleChangeToken={ handleChangeToken }
+        handleSubmit={ handleSubmit }
         saveToken={ saveToken }
         token={ token }
         balance={ balance }

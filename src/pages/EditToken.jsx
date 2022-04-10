@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import dataValid from '../services/dataValid';
 import validToken from '../services/validToken';
+import handleSubmit from '../services/handleSubmit';
 
 function EditToken () {
   const [tempToken, setTempToken] = useState('');
@@ -79,6 +80,7 @@ function EditToken () {
         renderRemove="renderRemove"
         handleChangeBalance={ handleChangeBalance }
         handleChangeToken={ handleChangeToken }
+        handleSubmit={ handleSubmit }
         dataValid={ dataValid(tempToken, tempBalance) }
         token={ tempToken }
         balance={ tempBalance }
