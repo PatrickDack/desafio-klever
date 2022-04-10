@@ -1,0 +1,35 @@
+button {
+  border: none;
+  border-radius: 3px;
+  color: whitesmoke;
+  cursor: pointer;
+  display: none;
+  font-size: 12px;
+  font-weight: 400;
+  height: 25px;
+  width: 80px;
+}
+
+.add-token {
+  background-color: #AA33B5;
+  display: block;
+}
+
+.save {
+  background-color: #AA33B5;
+  display: block;
+}
+
+.back {
+  background-color: gray;
+  display: block;
+}
+
+.renderRemove {
+  background-color: #920000;
+  display: block;
+}
+
+.disabled {
+  opacity: 50%;
+}

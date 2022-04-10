@@ -1,0 +1,22 @@
+.form {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.save-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.remove-container {
+  width: 100%;
+}

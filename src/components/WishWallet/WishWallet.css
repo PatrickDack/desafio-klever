@@ -1,0 +1,13 @@
+.container {
+  align-items: center;
+  color: whitesmoke;
+  display: flex;
+  font-size: 25px;
+  font-weight: 900;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.container img {
+  width: 45px;
+}

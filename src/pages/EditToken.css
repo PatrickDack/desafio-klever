@@ -1,0 +1,17 @@
+.main {
+  align-items: center;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35%;
+}
+
+.main-content {
+  align-items: center;
+  border-bottom: 25px;
+  display: flex;
+  font-weight: 400;
+  justify-content: space-between;
+  width: 100%;
+}
