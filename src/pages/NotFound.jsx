@@ -1,7 +1,10 @@
+import './NotFound.css'
+
 function NotFound() {
   return (
     <main>
-      <p>Pagina não encontrada!</p>
+      <img src="./src/images/page-not-found.png"/>
+      <h2>Oops, nada aqui!</h2>
     </main>
   )
 }

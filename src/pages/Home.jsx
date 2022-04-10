@@ -5,12 +5,6 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import './Home.css';
 
-// const data = [
-//   {token: 'KLV', balance: '10,250.50'},
-//   {token: 'DVK', balance: '50,250.71'},
-//   {token: 'KFI', balance: '10'},
-// ];
-
 const getTokens = () => JSON.parse(localStorage.getItem('tokens')) || [];
 
 function Home () {
